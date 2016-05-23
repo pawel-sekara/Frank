@@ -8,7 +8,7 @@ import Nest
 import Curassow
 
 
-let application: Application = {
+public let application: Application = {
   atexit { serve() }
   return Application()
 }()

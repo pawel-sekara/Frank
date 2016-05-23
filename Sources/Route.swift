@@ -1,9 +1,9 @@
 import Nest
 
 
-struct Route {
+public struct Route {
   /// The handler to perform the request
-  typealias Handler = Void -> ResponseConvertible
+  public typealias Handler = Void -> ResponseConvertible
 
   /// The HTTP method to match the route
   let method: String
@@ -11,7 +11,7 @@ struct Route {
   /// The match handler
   let match: RequestType -> Handler?
 
-  init(method: String, match: RequestType -> Handler?) {
+  public init(method: String, match: RequestType -> Handler?) {
     self.method = method
     self.match = match
   }

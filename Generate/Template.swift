@@ -8,7 +8,7 @@ import Nest
 public typealias Parameter = (Int, Int) -> Int
 
 
-func validateParameter(parser: ParameterParser, _ value: String) -> String? {
+public func validateParameter(parser: ParameterParser, _ value: String) -> String? {
   if let parameter = parser.shift() where parameter == value {
     return parameter
   }

@@ -26,7 +26,7 @@ func permute(count: Int, items: [[Bool]] = []) -> [[Bool]] {
 
 /// Returns all the possible combinations of functions variable combinations
 func combinations() -> [[Bool]] {
-  return permute(5)
+  return permute(6)
 }
 
 

@@ -1,8 +1,13 @@
 public class ParameterParser {
   var components: [String]
 
-  init(path: String) {
-    components = path.characters.split("/").map(String.init)
+  public init(path: String) {
+    let pathComponents = path.characters.split("?").map(String.init)
+    
+    components = pathComponents.first!.characters.split("/").map(String.init)
+    if pathComponents.count > 1 {
+        components[components.count - 1].appendContentsOf("?\(pathComponents.last!)")
+    }
   }
 
   public var isEmpty: Bool {

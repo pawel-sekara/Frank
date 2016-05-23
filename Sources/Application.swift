@@ -2,7 +2,7 @@ import Nest
 import Inquiline
 
 
-class Application {
+public class Application {
   var routes: [Route] = []
 
   func call(request: RequestType) -> ResponseType {
@@ -28,7 +28,7 @@ class Application {
   }
 
   /// Register a route for the given method and path
-  func route(method: String, _ path: String, _ closure: RequestType -> ResponseConvertible) {
+  public func route(method: String, _ path: String, _ closure: RequestType -> ResponseConvertible) {
     route(method) { request in
       if path == request.path {
         return { closure(request) }
@@ -39,7 +39,7 @@ class Application {
   }
 
   /// Register a route using a matcher closure
-  func route(method: String, _ match: RequestType -> Route.Handler?) {
+  public func route(method: String, _ match: RequestType -> Route.Handler?) {
     let route = Route(method: method, match: match)
     routes.append(route)
   }
