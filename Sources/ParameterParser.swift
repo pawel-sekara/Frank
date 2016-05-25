@@ -24,10 +24,3 @@ public class ParameterParser {
   }
 }
 
-public func validateParameter(parser: ParameterParser, _ value: String) -> String? {
-    if let parameter = parser.shift() where parameter == value {
-        return parameter
-    }
-    
-    return nil
-}
